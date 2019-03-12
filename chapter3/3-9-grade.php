@@ -1,4 +1,9 @@
-﻿<?
+﻿<?PHP
+/* if문 예제 : 점수에 따른 등급 출력
+ * if elseif else문
+ *
+ */
+
    $score = 83;
 
    if ($score>=95)
