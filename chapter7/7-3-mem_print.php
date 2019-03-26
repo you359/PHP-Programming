@@ -5,7 +5,7 @@
  * register_globals를 Off로 설정한 경우, $_POST[변수이름]을 통해서, POST로 전달된 파라미터를 변수로 받을 수 있음!
  */
 
-echo "아이디   : $_POST[id]<br>";
+echo "아이디   : $id<br>";
 echo "이름     : $name<br>";
 echo "비밀번호 : $passwd<br>";
 echo "비밀번호 확인 : $passwd_confirm<br>";
