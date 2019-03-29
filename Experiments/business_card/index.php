@@ -1,5 +1,26 @@
 <!-- 구글 검색 : business card card css => CSS Business Card - CodePen -->
 <!-- 출처: https://codepen.io/swellfoop/pen/NLyRON -->
+
+<?PHP
+// MySQL 데이터베이스 연결
+$connect = mysql_connect("localhost","kyj","1111");
+// DB 선택
+mysql_select_db("kyj_db", $connect);
+// sql 쿼리 string 생성
+$sql = "select * from user where name='$_POST[name]' and password='$_POST[password]'";
+// sql 쿼리 실행
+$result = mysql_query($sql);
+// 결과 row 값 가져오기!
+$row = mysql_fetch_array($result);
+
+if(!$row) {
+    // 입력한 name 과 password 에 해당하는 결과 레코드가 없는 경우
+    echo "<script> alert('회원 정보가 없거나, 비밀번호가 일치하지 않습니다.') </script>";
+    echo "<script> location.href = 'login_form.php' </script>";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,10 +70,10 @@
         <div class="text">
             <header class="head">
                 <h1 class="head__name">
-                    <b class="name__fn">Keith</b>
-                    Pickering
+                    <b class="name__fn"><? echo $row[company] ?></b>
+                    <? echo $row[name] ?>
                 </h1>
-                <p class="head__subtitle">Front-end Web<br> Developer</p>
+                <p class="head__subtitle"><? echo $row[side] ?><br> <? echo $row[jop] ?></p>
             </header>
         </div>
     </div>
@@ -60,10 +81,10 @@
     <div class="card card--back">
         <div class="card__content">
             <ul class="contact">
-                <li><a href="https://keithpickering.github.io">keithpickering.github.io</a></li>
-                <li><a href="https://facebook.com/keithpickeringdesign">facebook.com/keithpickeringdesign</a></li>
-                <li><a href="https://twitter.com/thatkeithdude">twitter.com/thatkeithdude</a></li>
-                <li><a href="https://github.com/keithpickering">github.com/keithpickering</a></li>
+                <li><a href="https://<? echo $row[blog_url] ?>"><? echo $row[blog_url] ?></a></li>
+                <li><a href="https://facebook.com/<? echo $row[facebook_id] ?>">facebook.com/<? echo $row[facebook_id] ?></a></li>
+                <li><a href="https://twitter.com/<? echo $row[twitter_id] ?>">twitter.com/<? echo $row[twitter_id] ?></a></li>
+                <li><a href="https://github.com/<? echo $row[github_id] ?>">github.com/<? echo $row[github_id] ?></a></li>
         </div>
     </div>
 
