@@ -1,7 +1,7 @@
 ﻿<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?
-    $connect = mysql_connect("localhost","kyj","1111");
-    mysql_select_db("kyj_db", $connect);
+    $connect = mysql_connect("localhost","root","apmsetup");
+    mysql_select_db("phpprogram", $connect);
 
     $sql = "insert into biz_card (num, name, company, tel, hp, address)";
     $sql .= " values (1, '원선우', '미래전자', '031-276-1829', ";

@@ -15,9 +15,10 @@
 //$now_year = date('Y');
 //$now_month = date('m');
 //$now_day = date('d');
-$now_year=2013;
-$now_month=3;
-$now_day=10;
+
+//$now_year=2013;
+//$now_month=3;
+//$now_day=10;
 
 $birth_year=1990;
 $birth_month=3;
