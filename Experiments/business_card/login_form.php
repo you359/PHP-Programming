@@ -16,27 +16,27 @@
 
 <div class="login-page">
     <div class="form">
-        <form class="register-form">
-            <input type="text" placeholder="name (< 9 alphabet)"/>
-            <input type="password" placeholder="password"/>
-            <input type="text" placeholder="email address"/>
-            <input type="text" placeholder="company (< 6 alphabet)"/>
-            <input type="text" placeholder="side (ex, front-end web)"/>
-            <input type="text" placeholder="jop (ex, developer)"/>
+        <form class="register-form" method="post" action="signup.php">
+            <input type="text" placeholder="name (< 9 alphabet)" name="name" />
+            <input type="password" placeholder="password" name="password" />
+            <input type="text" placeholder="email address"  name="email" />
+            <input type="text" placeholder="company (< 6 alphabet)"  name="company" />
+            <input type="text" placeholder="side (ex, front-end web)"  name="side" />
+            <input type="text" placeholder="jop (ex, developer)"  name="jop" />
 
-            <input type="text" placeholder="blog url (ex, keithpickering.github.io)"/>
-            <input type="text" placeholder="facebook id"/>
-            <input type="text" placeholder="twitter id"/>
-            <input type="text" placeholder="github id"/>
+            <input type="text" placeholder="blog url (ex, keithpickering.github.io)"  name="blog_url" />
+            <input type="text" placeholder="facebook id" name="facebook_id" />
+            <input type="text" placeholder="twitter id" name="twitter_id" />
+            <input type="text" placeholder="github id" name="github_id" />
 
             <!--<button>create</button>-->
             <input type="submit" value="create" />
             <p class="message">Already registered? <a href="#">Sign In</a></p>
         </form>
 
-        <form class="login-form">
-            <input type="text" placeholder="username"/>
-            <input type="password" placeholder="password"/>
+        <form class="login-form" method="post" action="index.php">
+            <input type="text" placeholder="username" name="name"/>
+            <input type="password" placeholder="password" name="password" />
             <input type="submit" value="login" />
             <!--<button>login</button>-->
             <p class="message">Not registered? <a href="#">Create an account</a></p>
