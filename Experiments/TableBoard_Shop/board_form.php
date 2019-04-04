@@ -1,3 +1,10 @@
+<?php
+#TODO: update form 인 경우, form 에 정보 표시
+if(isset($_GET[num])) {
+    #TODO: MySQL 테이블에서, num에 해당하는 레코드 가져오기
+}
+?>
+
 <!-- 출처 : https://colorlib.com/wp/template/responsive-table-v1/ -->
 <!DOCTYPE html>
 <html lang="en">
@@ -49,12 +56,27 @@
 						</thead>
 						<tbody>
 						<tr>
-							<td class="column1"> <input name="date" type="text" /> </td>
-							<td class="column2"> <input name="order_id" type="number" /> </td>
-							<td class="column3"> <input name="name" type="text" /> </td>
-							<td class="column4"> <input name="price" type="number" placeholder="$" style="text-align: right;" /> </td>
-							<td class="column5"> <input name="quantity" type="number" value="1" style="text-align: right;" /> </td>
-							<td class="column6"> $<span id="total"></span> </td>
+                            <?php
+                            if(isset($_GET[num])) { //update 의 경우!
+                                ?>
+                                <td class="column1"> <input name="date" type="text" value="<? #TODO: 정보 표시 ?>" /> </td>
+                                <td class="column2"> <input name="order_id" type="number" value="<? #TODO: 정보 표시 ?>" /> </td>
+                                <td class="column3"> <input name="name" type="text" value="<?  #TODO: 정보 표시 ?>" /> </td>
+                                <td class="column4"> <input name="price" type="number" placeholder="$" style="text-align: right;" value="<? #TODO: 정보 표시 ?>" /> </td>
+                                <td class="column5"> <input name="quantity" type="number" value="<? #TODO: 정보 표시 ?>" style="text-align: right;" /> </td>
+                                <td class="column6"> $<span id="total"> <? #TODO: 정보 표시 ?> </span> </td>
+                                <?php
+                            } else {
+                                ?>
+                                <td class="column1"> <input name="date" type="text" /> </td>
+                                <td class="column2"> <input name="order_id" type="number" /> </td>
+                                <td class="column3"> <input name="name" type="text" /> </td>
+                                <td class="column4"> <input name="price" type="number" placeholder="$" style="text-align: right;" /> </td>
+                                <td class="column5"> <input name="quantity" type="number" value="1" style="text-align: right;" /> </td>
+                                <td class="column6"> $<span id="total"></span> </td>
+                                <?php
+                            }
+                            ?>
 						</tr>
 						</tbody>
 					</table>
