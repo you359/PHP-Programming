@@ -6,6 +6,14 @@
 $a = 7;
 $b = 8;
 
+$txt = sprintf("%d <br>",++$a);
+echo $txt;
+
+$txt = sprintf("%d <br>",$a++);
+echo $txt;
+
+// --연산 위치
+
 $a++;	// 7 + 1 = 8
 $b--;	// 8 - 1 = 7
 

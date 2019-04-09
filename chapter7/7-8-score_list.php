@@ -1,14 +1,14 @@
 ﻿<?
-    $connect = mysql_connect("localhost","kyj","1111"); // DB 연결
+    $connect = mysql_connect("localhost","kyj","1234"); // DB 연결
     mysql_select_db("kyj_db", $connect);                // DB 선택
 
-    if ($_GET[mode] == "insert")                       	   // 데이터 입력 모드
+    if ($mode == "insert")                       	   // 데이터 입력 모드
     {
-        $sum = $_POST[sub1] + $_POST[sub2] + $_POST[sub3] + $_POST[sub4] + $_POST[sub5];           // 합계 구하기
+        $sum = $sub1 + $sub2 + $sub3 + $sub4 + $sub5;           // 합계 구하기
         $avg = $sum/5;                           		// 평균 구하기
 
         $sql = "insert into stud_score (name, sub1, sub2, sub3, sub4, sub5, sum, avg) values";
-        $sql .= "('$_POST[name]', $_POST[sub1], $_POST[sub2], $_POST[sub3], $_POST[sub4], $_POST[sub5], $sum, $avg)";
+        $sql .= "('$name', $sub1, $sub2, $sub3, $sub4, $sub4, $sum, $avg)";
 
         $result = mysql_query($sql, $connect);
     }
@@ -56,9 +56,9 @@
 
  <?
  // select 문 수행
-    if ($_GET[mode] == "big_first")          // 성적순 정렬(내림차순)
+    if ($mode == "big_first")          // 성적순 정렬(내림차순)
        $sql = "select * from stud_score order by sum desc";
-    else if ($_GET[mode] == "small_first")   // 성적순 정렬(오름차순)
+    else if ($mode == "small_first")   // 성적순 정렬(오름차순)
        $sql = "select * from stud_score order by sum";
     else
        $sql = "select * from stud_score";
@@ -84,7 +84,7 @@
        		<td> $row[sub5] </td>
        		<td> $row[sum]  </td>
        		<td> $avg  </td>
-       		<td> <a href='7-9-score_delete.php?num=$num'>[삭제]</a></td>
+       		<td> <a href='score_delete.php?num=$num'>[삭제]</a></td>
 	      </tr>
              ";
 
