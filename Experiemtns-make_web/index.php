@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!doctype html>
 <html>
 	<head>
@@ -63,6 +66,10 @@
 				</p>
 			</div>
 		</div>
+
+        <?php
+        include "partial/popup.php"
+        ?>
 
         <?php
         include "partial/script.php"

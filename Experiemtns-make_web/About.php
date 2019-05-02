@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!doctype html>
 <html>
 	<head>
@@ -53,27 +56,9 @@
 			</div>
 		</div>
 
-        <style>
-            input {
-                width: 100%;
-                margin-bottom: 10px;
-                padding: 5px;
-            }
-
-            input[type="submit"] {
-                background-color: #1f7e9a;
-                color: #fff;
-            }
-        </style>
-
-        <div id="element_to_pop_up">
-            <h3>Login</h3>
-            <form>
-                <input type="text">
-                <input type="password">
-                <input type="submit" value="Login">
-            </form>
-        </div>
+        <?php
+        include "partial/popup.php"
+        ?>
 
         <?php
         include "partial/script.php"

@@ -13,7 +13,16 @@
         <li><a href="About.php">About</a></li>
         <li><a href="#">Service</a></li>
         <li><a href="#">Contact Us</a></li>
-        <li><a id="login" href="#">Login</a></li>
+        <?php
+            if($_SESSION[id]) {
+                // Login state
+                echo "<li><a id=\"logout\" href=\"#\">Logout</a></li>";
+            } else {
+                // Logout state
+                echo "<li><a id=\"login\" href=\"#\">Login</a></li>";
+            }
+        ?>
+
     </ul>
 </nav>
 <!-- End Navigation -->
