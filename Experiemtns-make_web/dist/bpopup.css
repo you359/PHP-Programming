@@ -20,13 +20,18 @@
 }
 
 #upload_image_pop_up{
-    min-width: 200px;
+    width: 400px;
     /*min-height: 300px;*/
     border: solid;
     border-radius: 10px;
     background-color: #fff;
     display: none;
     padding: 20px;
+}
+
+#upload_image_pop_up img {
+    width: 100%;
+    height: auto;
 }
 
 #upload_image_pop_up input {
