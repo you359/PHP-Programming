@@ -66,6 +66,7 @@
         $row = mysql_fetch_array($result);
         $total_items = $row[cnt];
         $item_per_page = 3;
+        $num_page_button = 5;
         $total_page = ceil($total_items / $item_per_page);
         if(isset($_GET[p])) {
             $current_page = $_GET[p];
@@ -75,11 +76,8 @@
 
         $start = $current_page * $item_per_page;
 
-        echo $total_page . "<br />";
-        echo $current_page + $item_per_page . "<br />";
-
-        if($total_page > $current_page + 5)
-            $display_pagenum = 5;
+        if($total_page > $current_page + $num_page_button)
+            $display_pagenum = $num_page_button;
         else
             $display_pagenum = $total_page - $current_page;
         ?>
