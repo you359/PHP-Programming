@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input id="text_data" type="text">
+<a id="ex1" href="#"> Ajax 호출! </a>
+
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script>
+    $('#ex1').click(function () {
+        $.ajax({
+            url: "get_data.php",
+            type: "post",
+            data: "data=" + $('#text_data').val(),
+            success: function (data) {
+                alert(data);
+            }
+        })
+    })
+</script>
+</body>
+</html>
