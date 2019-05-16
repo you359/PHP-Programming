@@ -15,14 +15,26 @@
 
 <script src="//code.jquery.com/jquery.min.js"></script>
 <script>
+    // ex1 의 id를 갖는 태그 (a) 를 클릭했을 때,
     $('#ex1').click(function () {
+
+        // ajax 호출
         $.ajax({
             url: "get_data.php",
             type: "post",
-            data: "data=" + $('#text_data').val(),
+            data: "data=" + $('#text_data').val(), //text_data 의 id를 갖는 태그 (input) 에 들어간 값을 가져오고자 할 경우 val() 사용
             success: function (data) {
-                alert(data);
+                // display_data 라는 id를 갖는 태그 (div) 에 data 추가하기(append)
                 $('#display_data').append(data)
+
+                // 특정 태그의 내용을 지우고자 할 경우
+                // $('#display_data').empty()
+
+                // 특정 대그의 내용을 html 형태로 대체하고자 할 경우
+                //$('#display_data').html("<a href='#'>" + data + "</a>")
+
+                // 특정 대그의 내용을 text 형태로 대체하고자 할 경우
+                //$('#display_data').text("<a href='#'>" + data + "</a>")
             }
         })
     })

@@ -11,7 +11,10 @@
 
 <script src="//code.jquery.com/jquery.min.js"></script>
 <script>
+    // ex1 의 id를 갖는 태그 (a) 를 클릭했을 때,
     $('#ex1').click(function () {
+
+        // ajax 호출
         $.ajax({
             url: "get_data.php",
             type: "post",

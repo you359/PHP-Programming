@@ -8,6 +8,7 @@
 
 // echo example
 
+// POST로 가져온 값 그대로 출력
 echo $_POST[data];
 
 ?>
