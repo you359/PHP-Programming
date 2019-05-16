@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #ex {
+            width: 100px;
+            height: 300px;
+            background: #00bbff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="ex">
+        테스트
+    </div>
+
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script>
+        // http://api.jquery.com/bind/ 참고!
+
+        // Event들 : https://api.jquery.com/category/events/
+        $('#ex').bind('click', function (e) {
+            alert("#ex 를 클릭함!");
+        })
+
+        $('#ex').bind('mousewheel', function (e) {
+            alert("#ex 위에서 mousewheel 이 돌려짐!");
+        })
+
+        $('#ex').bind('mouseenter', function (e) {
+            alert("#ex 위로 마우스 포인터가 들어감!");
+        })
+
+        $('#ex').bind('mouseleave', function (e) {
+            alert("#ex 에서 마우스 포인터가 빠져나옴!");
+        })
+    </script>
+</body>
+</html>
+
