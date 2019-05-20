@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--<input id="text_data" type="text">-->
+<textarea id="text_data"></textarea>
+<a id="ex1" href="#"> Ajax 호출! </a>
+
+<h3>번역 결과</h3>
+<div id="translated_text">
+
+</div>
+
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script>
+    // ex1 의 id를 갖는 태그 (a) 를 클릭했을 때,
+    $('#ex1').click(function () {
+
+        // ajax 호출
+        $.ajax({
+            url: "translation.php",
+            type: "get",
+            data: "data=" + $('#text_data').val(),
+            dataType: "json",
+            success: function (data) {
+                // alert(data);
+                // console.log(data['translated_text']);
+                $('#translated_text').text(data['translated_text'][0]);
+            }
+        })
+    })
+</script>
+</body>
+</html>

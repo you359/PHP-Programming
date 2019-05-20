@@ -14,7 +14,7 @@
         <li><a href="gallery.php">Gallery</a></li>
         <li><a href="gallery2.php">Gallery-Ajax</a></li>
         <li><a href="#">Service</a></li>
-        <li><a href="#">Contact Us</a></li>
+        <li><a href="contact.php">Contact Us</a></li>
         <?php
             if($_SESSION[id]) {
                 // Login state
