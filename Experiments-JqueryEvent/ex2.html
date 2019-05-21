@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #ex {
+            width: 100px;
+            height: 2000px;
+            background: #00bbff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="ex">
+        테스트
+    </div>
+
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script>
+        // http://api.jquery.com/bind/ 참고!
+
+        // jQuery에서 사용할 수 있는 event들에 대한 참고 링크: https://api.jquery.com/category/events/
+        $(window).bind('mousewheel', function(e) {
+
+            console.log("window-scrollTop : " + $(window).scrollTop())
+            console.log("window-height : " + $(window).height())
+            console.log("document-height : " + $(document).height())
+
+            if(e.originalEvent.wheelDelta / 120 > 0) {
+            } else {
+
+                if(Math.ceil($(window).scrollTop()) + $(window).height() >= $(document).height()) {
+                    console.log('!!')
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
