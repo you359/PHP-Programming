@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+
+POST 형식으로 데이터를 보내고자 할 경우,
+form 의 method 가 POST로 되어야 하고,
+form 태그 내 input 태그의 name 이 정의되어 있어야 한다!!
+
+POST와 GET 모두 보내고 싶은 경우,
+action 의 url 뒤에 ?key1=value1&key2=value2 와 같이 파라미터를 문자열로 정의해서 전달할 수 있다!!
+
+아래는 각 input 태그의 type 별로 생성한 form 이다.
+참고 링크 : http://jun.hansung.ac.kr/CWP/htmls/HTML%20Input%20Types.html
+
+각각의 input 에 내용을 입력한 후,
+PHP내 $_POST 의 각 element 의 값이 어떻게 변화하는지 살펴보고, 이해해보길 바람니다.
+
+-->
+
+<form action="server.php" method="post" enctype="multipart/form-data">
+    <div>
+        <!--텍스트 입력-->
+        <p> text </p>
+        <input type="text" name="text">
+    </div>
+
+    <div>
+        <!--패스워드 입력-->
+        <p> password </p>
+        <input type="password" name="password">
+    </div>
+
+    <div>
+        <!--여러 줄 텍스트 입력-->
+        <p> textarea </p>
+        <textarea name="textarea"></textarea>
+    </div>
+
+    <div>
+        <!--라디오 버튼-->
+        <p> radio </p>
+        <input type="radio" name="radio" value="radio1">
+        <input type="radio" name="radio" value="radio2">
+        <input type="radio" name="radio" value="radio3">
+    </div>
+
+    <div>
+        <!--체크박스-->
+        <p> checkbox </p>
+        <input type="checkbox" name="checkbox" value="checked">
+    </div>
+
+    <div>
+        <!--숫자 입력-->
+        <p> number </p>
+        <input type="number" name="number">
+    </div>
+
+    <div>
+        <!--날짜 입력-->
+        <p> date </p>
+        <input type="date" name="date">
+    </div>
+
+    <div>
+        <!--색상 입력-->
+        <p> color </p>
+        <input type="color" name="color">
+    </div>
+
+    <div>
+        <!--범위 입력-->
+        <p> range </p>
+        <input type="range" name="range" min="0" max="10">
+    </div>
+
+    <div>
+        <!--월-->
+        <p> month </p>
+        <input type="month" name="month">
+    </div>
+
+    <div>
+        <!--주-->
+        <p> week </p>
+        <input type="week" name="week">
+    </div>
+
+    <div>
+        <!--시간-->
+        <p> time </p>
+        <input type="time" name="time">
+    </div>
+
+    <div>
+        <!--일시-->
+        <p> datetime-local </p>
+        <input type="datetime-local" name="datetime">
+    </div>
+
+    <div>
+        <!--이메일-->
+        <p> email </p>
+        <input type="email" name="email">
+    </div>
+
+    <div>
+        <!--검색 - 텍스트 입력과 동일-->
+        <p> search </p>
+        <input type="search" name="search">
+    </div>
+
+    <div>
+        <!--전화번호 입력-->
+        <p> tel </p>
+        <input type="tel" name="tel">
+    </div>
+
+    <div>
+        <!--url 입력-->
+        <p> url </p>
+        <input type="url" name="url">
+    </div>
+
+    <div>
+        <!-- 폼 제출 버튼 -->
+        <p> submit </p>
+        <input type="submit" value="submit">
+    </div>
+
+    <div>
+        <!--일반 버튼-->
+        <p> button </p>
+        <input type="button" onclick="alert('Button Clicked!!')" value="Click Me!">
+    </div>
+
+</form>
+
+</body>
+</html>
